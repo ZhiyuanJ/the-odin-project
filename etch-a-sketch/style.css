@@ -7,10 +7,8 @@
 
 }
 
-
 .square{
     flex: 1 0 auto;
-    width: 10px;
     aspect-ratio: 1/1;
     border-style: solid;
 }
