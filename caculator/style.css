@@ -1,0 +1,123 @@
+body{
+    display:flex;
+    justify-content: center;
+
+}
+
+p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.result{
+    font-size: 96px;
+    text-align: right;
+    vertical-align: baseline;
+    margin-bottom: 0px;
+
+}
+
+#background{
+    width: 594px;
+    height: 723px;
+    background-color: black;
+    display:flex;
+    flex-direction: column;
+
+}
+
+#display{
+    background-color: black;
+    width: 594px;
+    height: 203px;
+    color:white
+}
+
+#button{
+    background-color: black;
+    width:594px;
+    height:517px;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+#clear{
+    width: 435px;
+    height: 104px;
+    background-color: #B8621B;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+#numbers{
+    display: flex;
+    width:435px;
+    height: 416px;
+    background-color: lightgrey;
+    flex-direction: column;
+}
+
+#number_up{
+    display:flex;
+    flex-wrap: wrap-reverse;
+}
+
+#number_down{
+    display:flex;
+}
+
+#number_zero{
+    background-color: #E3CCAE;
+    box-sizing: border-box;
+    border-style: solid;
+    height: 104px;
+    flex: 2 1 0;
+
+}
+
+#decimal_button{
+    flex: 1;
+    height: 104px;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+#calculation{
+    width:159px;
+    height:520px;
+    background-color: black;
+
+}
+
+.num_button{
+    width: 145px;
+    height: 104px;
+    padding:0;
+}
+
+.calc_button{
+    width: 159px;
+    height:104px;
+    margin: 0 auto;
+    background-color: #B8621B;
+    border-style:solid;
+    box-sizing: border-box;
+}
+
+
+.symbol{
+    font-size: 48px;
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+    margin:18px;
+
+}
+
+#clear_symbol{
+        font-size: 48px;
+        color:white;
+        text-align: left;
+        vertical-align: middle;
+        margin:0;
+        margin: 18px 0 0 10px;
+}

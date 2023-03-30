@@ -3,10 +3,40 @@
     <head>
         <meta charset="en">
         <title>Calculator</title>
-        <link rel = "style" href="style.css">
-        <script src="script.js"></script>
+        <link rel = "stylesheet" href="style.css">
+        <script src="script-function.js" defer></script>
+        <script src="script-ui.js" defer></script>
     </head>
+
+
     <body>
-        
+        <div id = "background">
+            <div id = "display"><p class = "result">1001</p></div>
+
+            <div id = "button">
+                <div>
+                    <div class = "operator" id = "clear"> <p id = "clear_symbol">Clear</div>
+                        <div id = "numbers">
+                            <div id = "number_up">
+
+                            </div>
+                            <div id = "number_down">
+                                <div id = "number_zero"><p class = "symbol">0</p></div>
+                                <div id = "decimal_button"><p class = "symbol" >,</p></div>
+                            </div>
+
+                        </div> <!-- palce all number and decimal inside-->
+                </div>
+                <div class = "operator" id = "calculation">
+                    <div class = "calc_button" id = "plus"><p class = "symbol">+</p></div>
+                    <div class = "calc_button" id = "minus"><p class = "symbol">−</p></div>
+                    <div class = "calc_button" id = "times"><p class = "symbol">×</p></div>
+                    <div class = "calc_button" id = "divides"><p class = "symbol">÷</p></div>
+                    <div class = "calc_button" id = "equals"><p class = "symbol">=</p></div>
+                </div> <!-- place all operator, except clear, inside-->
+            </div>
+
+
+        </div>
     </body>
 </html>
