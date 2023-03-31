@@ -1,6 +1,14 @@
 const numberUp_container = document.querySelector('#number_up');
-const operator_container = document.querySelector("#calculation")
+const operator_container = document.querySelector("#calculation");
+const result_container = document.querySelector("#display");
+let result_display = document.createElement("p");
+result_display.setAttribute("class", "result");
 
+
+let arrayShowA = [];
+let arrayCalcA = [];
+
+let valueCalcA;
 
 
 for( i = 0; i< 9; i ++){
@@ -21,6 +29,20 @@ for( i = 0; i< 9; i ++){
 
     numberUp_container.appendChild(num_button);
 }
+
+
+function displayValue(value, arrayShow, arrayCalc, valueCalc){
+    arrayShow.push(value)
+    arrayCalc.push(value)
+    result_display.textContent = arrayShow.join("");
+    result_container.appendChild(result_display);
+    valueCalc = Number(arrayShow.join(""));
+    console.log(valueCalc);
+}
+
+    const numsInput = document.querySelectorAll(".num_button, #number_zero, #decimal_button");
+    //numsInput.forEach(num => num.addEventListener("mousedown", (e) => { console.log(e.target.innerText)}));
+    numsInput.forEach(num => num.addEventListener("mousedown", (e) => { displayValue(e.target.innerText,arrayShowA, arrayCalcA, valueCalcA )}));
 
 
 
