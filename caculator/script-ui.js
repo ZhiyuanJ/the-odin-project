@@ -6,18 +6,14 @@ const cleanButton = document.querySelector("#clear");
 let result_display = document.createElement("p");
 result_display.setAttribute("class", "result");
 
-let displayArrayA = [];
-let storeArrayA = []
-let valueA = new Number;
-
-let displayArrayB = [];
-let storeArrayB = []
-let valueB = new Number;
+const displayArray = {"A":[], "B":[]};
+const storeArray ={"A":[], "B":[]};
+let values = {}
+let operators = {}
 
 let opStatus = false; //Detect the status of the calculator,
                     //If false, the calculator not ready to calc
                     //Only after press operation button, it turns true.
-let currOperator = new String;
 
 for (i = 0; i < 9; i++) {
   const num_button = document.createElement("div");
@@ -38,63 +34,69 @@ for (i = 0; i < 9; i++) {
   numberUp_container.appendChild(num_button);
 }
 
-function displayValue(valueInput, array) {
-  array.push(valueInput);
-  result_display.textContent = array.join("");
+function displayValue(valueInput, status) {
+  if(!status){
+    displayArray.A.push(valueInput);
+    result_display.textContent = displayArray.A.join("");
+    
+  }else{
+    displayArray.B.push(valueInput);
+    result_display.textContent = displayArray.B.join("");
+  }
   result_container.appendChild(result_display);
 }
 
-function storeValue(valueInput, type){
-  if(type === "A"){
-    storeArrayA.push(valueInput);
-    valueA = Number(storeArrayA.join(""));
+function storeValue(valueInput, status){
+  if(!status){
+    storeArray.A.push(valueInput);
+    values.A = Number(storeArray.A.join(""));
   }else{
-    storeArrayB.push(valueInput)
-    valueB = Number(storeArrayB.join(""));
+    storeArray.B.push(valueInput)
+    values.B = Number(storeArray.B.join(""));
   }
-
-
 }
 
 function cleanDisplay() {
   result_container.innerHTML = "";
   opStatus = false;
-  displayArrayA = [];
-  storeArrayA = [];
-  valueA = new Number;
+  displayArray.A = [];
+  storeArray.A = [];
 
-  displayArrayB = [];
-  storeArrayB = [];
-  valueB = new Number;
+  displayArray.B = [];
+  storeArray.B = [];
 
+  values = {}
+  operators = {}
 }
 
 function operatorInstruction(e){
+  let symbol = e.target.innerText;
+  if(symbol === "="){
+    result = pressEqual();
+    result_display.textContent = result;
+    stop;
+  }else{
+    operators.curr = symbol;
+    //not complete
+  }
+  
   opStatus = !opStatus;
-  currOperator = e.target.innerText;
-  result_container.innerHTML = "";
+  //result_container.innerHTML = "";
 }
 
-const numsInput = document.querySelectorAll(
-  ".num_button, #number_zero, #decimal_button"
-);
-const opertInput = document.querySelectorAll(
-  ".calc_button"
-);
-
-opertInput.forEach(operator => operator.addEventListener("mousedown", (e) => {operatorInstruction(e)}));
+function pressEqual(){
+  if(Object.values(values).length === 2){
+    return operation(values.A, values.B, operatorLocator(operators.curr))
+  }
+}
 
 
-//numsInput.forEach((num) =>num.addEventListener("mousedown", (e) => {displayValue(e.target.innerText, displayArrayA);}));
-//numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {storeValue(e.target.innerText, "A")}));
+const numsInput = document.querySelectorAll(".num_button, #number_zero, #decimal_button");
+const opertInput = document.querySelectorAll(".calc_button");
+
+numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {displayValue(e.target.innerText, opStatus);}));
+numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {storeValue(e.target.innerText, opStatus)}));
 
 cleanButton.addEventListener("mousedown", cleanDisplay);
 
-
-if(opStatus){
-  numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {displayValue(e.target.innerText, displayArrayB);}));
-  numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {storeValue(e.target.innerText, "B")}));
-}else{
-  numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {displayValue(e.target.innerText, displayArrayA);}));
-  numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {storeValue(e.target.innerText, "A")}));
-}
+opertInput.forEach(operator => operator.addEventListener("mousedown", (e) => {operatorInstruction(e)}));
