@@ -1,14 +1,19 @@
 const numberUp_container = document.querySelector('#number_up');
 const operator_container = document.querySelector("#calculation");
 const result_container = document.querySelector("#display");
+
+const cleanButton = document.querySelector("#clear");
 let result_display = document.createElement("p");
 result_display.setAttribute("class", "result");
 
 
 let arrayShowA = [];
 let arrayCalcA = [];
-
 let valueCalcA;
+
+let arrayShowB = [];
+let arrayCalcB = [];
+let valueCalcB;
 
 
 for( i = 0; i< 9; i ++){
@@ -37,13 +42,29 @@ function displayValue(value, arrayShow, arrayCalc, valueCalc){
     result_display.textContent = arrayShow.join("");
     result_container.appendChild(result_display);
     valueCalc = Number(arrayShow.join(""));
-    console.log(valueCalc);
 }
 
-    const numsInput = document.querySelectorAll(".num_button, #number_zero, #decimal_button");
-    //numsInput.forEach(num => num.addEventListener("mousedown", (e) => { console.log(e.target.innerText)}));
-    numsInput.forEach(num => num.addEventListener("mousedown", (e) => { displayValue(e.target.innerText,arrayShowA, arrayCalcA, valueCalcA )}));
+function cleanDisplay(){
+    console.log(result_container.innerHTML);
+    console.log(arrayShowA)
+    console.log(arrayCalcA)
+    console.log(valueCalcA)
+    result_container.innerHTML = "";
+    arrayShowA = [];
+    arrayCalcA = [];
 
+    arrayShowB = [];
+    arrayCalcB = [];
+
+    console.log(result_container.innerHTML);
+    console.log(arrayShowA)
+    console.log(arrayCalcA)
+    console.log(valueCalcA)
+}
+
+const numsInput = document.querySelectorAll(".num_button, #number_zero, #decimal_button");
+numsInput.forEach(num => num.addEventListener("mousedown", (e) => { displayValue(e.target.innerText,arrayShowA, arrayCalcA, valueCalcA )}));
+cleanButton.addEventListener("mousedown", cleanDisplay);
 
 
 
