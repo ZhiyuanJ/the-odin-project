@@ -72,21 +72,30 @@ function cleanDisplay() {
 function operatorInstruction(e){
   let symbol = e.target.innerText;
   if(symbol === "="){
-    result = pressEqual();
+    result = pressEqual(operators.curr);
     result_display.textContent = result;
     stop;
   }else{
-    operators.curr = symbol;
+    if("curr" in operators){
+      operators.prev = operators.curr;
+      operators.curr = symbol;
+      displayArray.B = [];
+      storeArray.B = [];
+      values.A = pressEqual(operators.prev)
+      displayArray
+      values.B = new Number;
+    }else{
+      operators.curr = symbol;
+      opStatus = !opStatus;
+    }
     //not complete
   }
-  
-  opStatus = !opStatus;
   //result_container.innerHTML = "";
 }
 
-function pressEqual(){
+function pressEqual(opInput){
   if(Object.values(values).length === 2){
-    return operation(values.A, values.B, operatorLocator(operators.curr))
+    return operation(values.A, values.B, operatorLocator(opInput))
   }
 }
 
