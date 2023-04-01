@@ -36,10 +36,12 @@ for (i = 0; i < 9; i++) {
 
 function displayValue(valueInput, status) {
   if(!status){
+    valueInput === "." && displayArray.A.includes(".") ? stop:
     displayArray.A.push(valueInput);
     result_display.textContent = displayArray.A.join("");
     
   }else{
+    valueInput === "." && displayArray.B.includes(".") ? stop:
     displayArray.B.push(valueInput);
     result_display.textContent = displayArray.B.join("");
   }
@@ -48,13 +50,17 @@ function displayValue(valueInput, status) {
 
 function storeValue(valueInput, status){
   if(!status){
+    valueInput === "." && storeArray.A.includes(".") ? stop:
     storeArray.A.push(valueInput);
     values.A = Number(storeArray.A.join(""));
   }else{
+    valueInput === "." && storeArray.B.includes(".") ? stop:
     storeArray.B.push(valueInput)
     values.B = Number(storeArray.B.join(""));
   }
 }
+
+
 
 function cleanDisplay() {
   result_container.innerHTML = "";
@@ -109,6 +115,9 @@ function pressEqual(opInput){
 
 const numsInput = document.querySelectorAll(".num_button, #number_zero, #decimal_button");
 const opertInput = document.querySelectorAll(".calc_button");
+
+const decimalInput = document.querySelector("#decimal_button");
+
 
 numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {displayValue(e.target.innerText, opStatus);}));
 numsInput.forEach((num) => num.addEventListener("mousedown", (e) => {storeValue(e.target.innerText, opStatus)}));
