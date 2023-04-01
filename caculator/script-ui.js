@@ -71,10 +71,19 @@ function cleanDisplay() {
 
 function operatorInstruction(e){
   let symbol = e.target.innerText;
+  
+
   if(symbol === "="){
+    
     result = pressEqual(operators.curr);
+    if(result === Infinity || -Infinity){
+      result_display.textContent = "Error";
+      alert("Zero Denominator Error");
+      stop;
+    }else{
     result_display.textContent = result;
     stop;
+  }
   }else{
     if("curr" in operators){
       operators.prev = operators.curr;
@@ -88,9 +97,7 @@ function operatorInstruction(e){
       operators.curr = symbol;
       opStatus = !opStatus;
     }
-    //not complete
   }
-  //result_container.innerHTML = "";
 }
 
 function pressEqual(opInput){
