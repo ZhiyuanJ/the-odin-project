@@ -4,19 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up Page</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id = "banner">
-<div id = "logo_container">
-    <img id = "logo" src="asset/odin-lined.png" alt="website logo">
-    <p id="logo_text">ODIN</p>
-</div>
+    <div id = "banner">
+        <div id = "logo_container">
+            <img id = "logo" src="asset/odin-lined.png" alt="website logo">
+            <h1 id="logo_text">ODIN</h1>
+        </div>
 
-</div>
-<div id = "right_body"></div>
+        <p id = "credit">Photo by 
+            <a  href="https://unsplash.com/@haliewestphoto">Halie West</a> on 
+            <a  href="https://unsplash.com/photos/25xggax4bSA">Unsplash</a>
+        </p>
+
+        </div>
+    </div>
+
+    <div id = "right_body">
+
+        
+        <p id = "description">
+                This is not a real online service! You know you need something
+                like this in your life to help you realize your deepest dreams.
+                <br>
+                Sign up <i>now</i> to get started.<br />
+                <br />
+                You <i>know</i> you want to.
+        </p>
+        
+
+        <div id = "middle">
+            <form action="">
+                <fieldset>
+                    <legend>Let's do this !</legend>
+                        
+                            <div id="row">
+                                <div id="column_left">
+                                    <div id="first_name" class = "question">
+                                        <label for="first_name">First Name:</label>
+                                        <input type="text">
+                                    </div>
+                                
+                                    <div id="email" class = "question">
+                                        <label for="email">Email:</label>
+                                        <input type="email">
+                                    </div>
+                                    <div id="password" class = "question">
+                                        <label for="password">Password:</label>
+                                        <input type="password">
+                                    </div>
+                                </div>
+                                <div id="column_right">
+                                    <div id="last_name" class = "question">
+                                        <label for="last_name">Last Name:</label>
+                                        <input type="text" >
+                                    </div>
+                                    <div id="number" class = "question">
+                                        <label for="phone">Phone Number:</label>
+                                        <input type="number" >
+                                    </div>
+                                
+                                    <div id="confirm_password" class = "question">
+                                        <label for="confirm_password">Confirm Password:</label>
+                                        <input type="password">
+                                    </div>
+                                </div>
+                            </div>
+
+                    
+                    
+                </fieldset>
+                <input type="submit" value="">
+            </form>
+        </div>
+
+        <div id = "down">
+            Already ?
+        </div>
+    </div>
 
 </body>
 </html>

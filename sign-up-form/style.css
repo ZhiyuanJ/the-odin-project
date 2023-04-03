@@ -1,7 +1,11 @@
+
+
+
 body{
     display:flex;
     padding: 0;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @font-face {
@@ -10,25 +14,29 @@ body{
 }
 
 #banner{
-    flex: 1 1 0;
+    flex: 1;
+    display: flex;
+    justify-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+
     height: 100vh;
-    background-image: url('asset/left.jpg');
+    background: url('asset/left.jpg') no-repeat;
     background-size: cover;
-    background-repeat: no-repeat;
+
 }
 
 #logo_container{
+
     display:flex;
     flex-direction: row;
-    background-color: rgb(60, 60, 60, 0.6);
-    width: 100%;
+    background-color: rgb(0, 0, 0, 0.3);
     justify-items: center;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+
     position: relative;
-    top: 10%;
-
-
+    top: 20%;
 }
 
 #logo{
@@ -40,15 +48,73 @@ body{
 #logo_text{
     color:white;
     font-family: logo_font;
-    font-size: 5rem;
+    font-size: 500%;
     margin: 0;
+    padding-top: 20px;
     align-self: center;
 
 }
 
-#right_body{
-    flex: 2.5 1.5 0;
-    height: 100%;
-    background-color:black;
+#credit{
+    color:white;
+    position: absolute;
+    bottom: 1%;
+    font-size: 14px;
+    font-family: sans-serif;
+
+}
+#credit>a:link{
+    color:white;
 }
 
+#credit>a:visited{
+    color:white;
+}
+
+#right_body{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+
+    flex: 2;
+    background-color:rgb(249, 250, 251);
+}
+
+#description{
+    color:black;
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: bold;
+    
+    
+    margin:5% 20% -1% 5%;
+}
+
+#middle{
+    width: 100%;
+}
+
+form>fieldset{
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+form>fieldset>legend{
+    font-size: 24px;
+    float:left;
+    margin-bottom: 24px;
+}
+
+#row{
+    display:flex
+}
+
+#row>div>.question{
+    color:grey;
+    font-size:16px;
+    display:block
+}
