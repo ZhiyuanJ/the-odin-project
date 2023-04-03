@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
-
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id = "banner">
@@ -37,7 +37,7 @@
         
 
         <div id = "middle">
-            <form action="">
+            <form action="#" name = "sign_on">
                 <fieldset>
                     <legend>Let's do this !</legend>
                         
@@ -45,44 +45,44 @@
                                 <div id="column_left">
                                     <div id="first_name" class = "question">
                                         <label for="first_name">First Name:</label>
-                                        <input type="text">
+                                        <input type="text" required>
                                     </div>
                                 
                                     <div id="email" class = "question">
                                         <label for="email">Email:</label>
-                                        <input type="email">
+                                        <input type="email" required>
                                     </div>
                                     <div id="password" class = "question">
                                         <label for="password">Password:</label>
-                                        <input type="password">
+                                        <input type="password" required onChange = "onChange()">
+                                        
                                     </div>
                                 </div>
                                 <div id="column_right">
                                     <div id="last_name" class = "question">
                                         <label for="last_name">Last Name:</label>
-                                        <input type="text" >
+                                        <input type="text" required>
                                     </div>
                                     <div id="number" class = "question">
-                                        <label for="phone">Phone Number:</label>
-                                        <input type="number" >
+                                        <label for="phone">Phone Number (optional):</label>
+                                        <input type="number">
                                     </div>
                                 
                                     <div id="confirm_password" class = "question">
                                         <label for="confirm_password">Confirm Password:</label>
-                                        <input type="password">
+                                        <input type="password" required onChange = "onChange()">
                                     </div>
                                 </div>
                             </div>
 
                     
-                    
                 </fieldset>
-                <input type="submit" value="">
+                <input type="submit" value="Create Account" id = "create_account">
             </form>
         </div>
 
         <div id = "down">
-            Already ?
+            <p>Already have an account ? <a href="#">Log In</a></p>
         </div>
     </div>
 

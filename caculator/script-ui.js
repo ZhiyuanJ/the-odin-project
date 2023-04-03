@@ -1,4 +1,5 @@
 const numberUp_container = document.querySelector("#number_up");
+console.log(numberUp_container)
 const operator_container = document.querySelector("#calculation");
 const result_container = document.querySelector("#display");
 
