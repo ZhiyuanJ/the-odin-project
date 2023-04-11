@@ -1,0 +1,1 @@
+console.log(document.querySelector("#noti_bar>img:last-child"))
