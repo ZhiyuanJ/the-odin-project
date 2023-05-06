@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src = "script.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+<dialog id="input"> 
+    <form>
+        <fieldset>
+            <legend>Enter New Book Entry</legend>
+            <div>
+                <label for="book_name">Book Name: </label>
+                <input type="text" id="book_name" name = "book_name" required>
+            </div>
+            <div>
+                <label for="book_author">Author: </label>
+                <input type="text" id="book_author" name = "book_author" required>
+            </div>
+            <div>
+                <label for="book_pages">Pages: </label>
+                <input type="number" id="book_pages" name = "book_pages" required>
+            </div>
+            <div>
+                <label for = "book_read" >Read ? </label>
+                <label for="book_read"><input type="radio" name="book_read" id="book_read" value="yes">Yes</label>
+                <label for="book_read"><input type="radio" name="book_read" id="book_read" value="no">No</label>
+            </div>
+        </fieldset>
+            <button id = "submit_dialog">Submit</button>
+            <button id = "close_dialog">Close</button>
+    </form>    
+</dialog>
+
+
+    <div id = "header">
+        <h1 id="title">Your Library</h1>
+        <button id="add">Add Book</button>
+        <button id="display">Display Library</button>
+    </div>
+
+    <div id="body"></div>
+    
+</body>
+</html>
