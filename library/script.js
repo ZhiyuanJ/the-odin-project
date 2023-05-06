@@ -33,7 +33,7 @@ function retriveValues(event){
     let temp_name = document.querySelector("#book_name").value
     let temp_author = document.querySelector("#book_author").value
     let temp_pages = document.querySelector("#book_pages").value
-    let temp_read = document.querySelector("#book_read").value
+    let temp_read = document.querySelector("input[name='book_read']:checked").value
 
     let output = new book(temp_name, temp_author, temp_pages, temp_read)
 
@@ -129,8 +129,6 @@ function display(library){
         pad_body.append(pad) 
     });
 }
-
-
 
 const testBook = new book("The Coronation", "Services", "55", "yes")
 
